@@ -74,28 +74,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-.homepage-welcome-heading { 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  height: 100vh; 
-  font-size: 2rem;
-  color: var(--primary-foreground);
-  background-color: var(--primary);
-}
-
-.homepage-nav-menu {
-  position: absolute; 
-  top: 0;
-  right: 0;
-  margin: 10px;
-}
-
-.flash-message-banner {
-  padding: 10px;
-  margin: 10px;
-  border-radius: var(--radius);
-  background-color: var(--destructive);
-  color: var(--destructive-foreground);
-}
