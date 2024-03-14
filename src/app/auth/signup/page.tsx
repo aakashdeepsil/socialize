@@ -1,3 +1,10 @@
+"use client"
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+
+import { Mail, Github } from "lucide-react"
+
 import {
     Card,
     CardContent,
@@ -6,10 +13,9 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-
-import { Mail, Github } from "lucide-react"
- 
 import { Button } from "@/components/ui/button"
+
+import { signUpWithGithub } from '../actions';
 
 export default function AuthPage() {
     return (
@@ -20,22 +26,19 @@ export default function AuthPage() {
                     <CardDescription>Join our community to meet new and exciting people in your field of interest.</CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <Button>
-                        <Mail className="mr-2 h-4 w-4" /> Signup with Email
-                    </Button>
+                    <Link href="/auth/signup/email">
+                        <Button>
+                            <Mail className="mr-2 h-4 w-4" /> Signup with Email
+                        </Button>
+                    </Link>
                 </CardContent>
                 <CardContent>
-                    <Button>
-                        <Mail className="mr-2 h-4 w-4" /> Sign up with Outlook
-                    </Button>
-                </CardContent>
-                <CardContent>
-                    <Button>
+                    <Button onClick={signUpWithGithub}>
                         <Github className="mr-2 h-4 w-4" /> Sign up with GitHub
                     </Button>
                 </CardContent>
                 <CardFooter>
-                    <p>Already have an account? <Button>Login</Button></p>
+                    <p>Already have an account? <Link href="/auth/login">Login</Link></p>
                 </CardFooter>
             </Card>
         </div>
